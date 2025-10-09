@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vensly's portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tone.js will be added later when we integrate the piano -->
+
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home">
+        <span class="logo-dot"></span>
+        <span class="brand-text">Vensly</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Landing page-->
+    <section id="home" class="section home-section">
+         <canvas id="particleCanvas"></canvas>
+      <div class="container grid home-grid">
+        <div class="intro">
+          <h1 class="title neon">I'm Vensly Gunasekara <br><span class="accent">Software Engineering Undergraduate</span> 
+          <p class="lead">
+            I am a software engineering undergraduate and a professional keyboardist who builds interactive tools where music meets machine. My work explores not only software fields application but also addresses music field applications such as real-time audio, expressive UI, and ML-powered music tools. 
+          </p>
+
+          <div class="home-actions">
+            <a class="btn primary" href="#projects">Explore Projects</a>
+            <a class="btn ghost" href="assets/Vensly's CV.pdf" download class="cv-btn">Resume</a>
+
+          </div>
+        <br>
+          <div class="mini-note">Tip: Try the playable piano !<br>You will love it !</div>
+        </div>
+
+        <aside class="hero-aside">
+          <div class="profile-card">
+            <div class="photo-frame">
+              <img src="images/mypic.jpg" alt="Vensly photo" class="profile-photo">
+              <div class="photo-glow"></div>
+            </div>
+
+            <div class="piano-placeholder">
+              <!-- We will integrate the one-octave piano here in Step 3 -->
+              <div class="piano-ghost">Playable Piano — coming next</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text fade-in">
+            <p>
+            Software Engineering undergraduate skilled in full-stack web and
+            mobile application development using Java, C#, Spring Boot, .NET,
+            Flutter, React, MySQL and Firebase. Passionate about developing
+            scalable, and user friendly applications and solving real-world
+            problems through clean architecture, teamwork, and continuous learning.
+            </p>
+            <p>
+                I thrive on collaborating with cross-functional teams to deliver
+                impactful solutions. With a strong foundation in computer science
+                principles and a passion for music technology, I aim to create
+                innovative applications that bridge the gap between art and code.
+            </p>
+          </div>
+
+          <div class="about-highlights fade-in">
+            <ul class="highlight-list">
+              <li><strong>Blend of Tech & Music:</strong> Web audio, Tone.js, Web MIDI, ML for music</li>
+              <li><strong>Tools:</strong> Java, Python, JS/Node, React (optional later), FL Studio, Ableton</li>
+              <li><strong>Goal:</strong> Ship interactive products that teach, inspire, and perform.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="muted">A selection of experiments and projects highlighting both software craft and musical creativity.</p>
+
+        <div class="projects-grid">
+          <!-- Placeholder cards — replace with real project details -->
+          <article class="project-card fade-in">
+            <div class="card-head">
+              <h3>Interactive Piano Lab</h3>
+              <span class="tag">Tone.js · WebAudio · UX</span>
+            </div>
+            <p class="card-desc">Playable one-octave piano with recording/loop features and visualizer. Embedded in the landing page.</p>
+            <div class="card-meta">
+              <a class="link" href="#" target="_blank">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card fade-in">
+            <div class="card-head">
+              <h3>Smart Jam Web App</h3>
+              <span class="tag">Full Stack · Node · Socket.io</span>
+            </div>
+            <p class="card-desc">Real-time collaborative jam session where multiple users can play and layer loops.</p>
+            <div class="card-meta">
+              <a class="link" href="#" target="_blank">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card fade-in">
+            <div class="card-head">
+              <h3>AI Melody Assistant</h3>
+              <span class="tag">ML · Python · Music</span>
+            </div>
+            <p class="card-desc">A small ML prototype that suggests melodic continuations and chord progressions.</p>
+            <div class="card-meta">
+              <a class="link" href="#" target="_blank">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid fade-in">
+          <div class="skill-col">
+            <h4>Technical</h4>
+            <ul class="skill-list">
+              <li class="skill-pill">Java</li>
+              <li class="skill-pill">Python</li>
+              <li class="skill-pill">JavaScript</li>
+              <li class="skill-pill">Web Audio / Tone.js</li>
+              <li class="skill-pill">Databases</li>
+            </ul>
+          </div>
+
+          <div class="skill-col">
+            <h4>Music</h4>
+            <ul class="skill-list">
+              <li class="skill-pill">Music Production</li>
+              <li class="skill-pill">DAWs: FL Studio, Ableton</li>
+              <li class="skill-pill">Sound Design</li>
+              <li class="skill-pill">Audio Processing</li>
+            </ul>
+          </div>
+
+          <div class="skill-col">
+            <h4>Soft</h4>
+            <ul class="skill-list">
+              <li class="skill-pill">Problem Solving</li>
+              <li class="skill-pill">Teamwork</li>
+              <li class="skill-pill">Creative Direction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid fade-in">
+          <div class="contact-card">
+            <p>Interested in collaborating or hiring? Let’s build something great together.</p>
+            <a class="btn primary" href="mailto:youremail@example.com">Email Me</a>
+            <div class="socials">
+              <a class="link" href="#" target="_blank">GitHub</a>
+              <a class="link" href="#" target="_blank">LinkedIn</a>
+              <a class="link" href="#" target="_blank">SoundCloud</a>
+            </div>
+          </div>
+
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Form demo — integrate backend later')">
+            <label>
+              <span>Name</span>
+              <input type="text" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea rows="5" placeholder="Tell me about your idea" required></textarea>
+            </label>
+            <button class="btn primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <strong>Vensly</strong> — Built with code & creativity.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
