@@ -1,71 +1,45 @@
-// --- NEW: tsparticles configuration ---
-// This code loads a beautiful, lightweight particle animation in the background.
-window.addEventListener('load', () => {
-  tsParticles.load("tsparticles", {
-    fpsLimit: 60,
-    background: {
-      color: "#05060a",
-    },
-    particles: {
-      number: {
-        value: 80,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: "#00bfff",
-      },
-      shape: {
-        type: "circle",
-      },
-      opacity: {
-        value: 0.5,
-        random: true,
-      },
-      size: {
-        value: 3,
-        random: { enable: true, minimumValue: 1 },
-      },
-      links: {
-        enable: true,
-        distance: 150,
-        color: "#00bfff",
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: "none",
-        out_mode: "out",
-        bounce: false,
-      },
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: "repulse",
-        },
-        onclick: {
-          enable: true,
-          mode: "push",
-        },
-      },
-      modes: {
-        repulse: {
-          distance: 100,
-        },
-        push: {
-          quantity: 4,
-        },
-      },
-    },
-    detectRetina: true,
+// --- UPDATED: Particle background ---
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Create particles
+const PARTICLE_COUNT = 80;
+for(let i=0;i<PARTICLE_COUNT;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    vx: (Math.random()-0.5)*0.3,
+    vy: (Math.random()-0.5)*0.3,
+    r: Math.random()*2+1
   });
-});
+}
+// Animate particles
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='rgba(0,191,255,0.7)'; // This is the particle color
+  particles.forEach(p=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+
+    if(p.x<0||p.x>canvas.width) p.vx*=-1;
+    if(p.y<0||p.y>canvas.height) p.vy*=-1;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// --- REMOVED: tsparticles code block ---
 
 // NAV toggle (mobile)
 const navToggle = document.getElementById('navToggle');
@@ -117,13 +91,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// --- NEW: Horizontal scroll for projects ---
+// Horizontal scroll for projects
 const projectsWrapper = document.querySelector('.projects-wrapper');
 if (projectsWrapper) {
   projectsWrapper.addEventListener('wheel', (evt) => {
-    // Prevent the default vertical scroll
     evt.preventDefault();
-    // Add the vertical scroll amount to the horizontal scroll position
     projectsWrapper.scrollLeft += evt.deltaY;
   });
 }
